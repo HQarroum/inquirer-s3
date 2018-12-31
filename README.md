@@ -30,11 +30,36 @@ It is also possible to pre-select a `bucket` or even an object using the `prefix
 
 ## Usage
 
-### Register `inquirer-s3`
+### Register the prompt
 
+In order to use `inquirer-s3`, you first need to register it with inquirer under a key name as follow.
 
+```js
+const inquirer = require('inquirer');
+// Registers `inquirer-s3` under the key 's3-object'.
+inquirer.registerPrompt('s3-object', require('inquirer-s3'));
+```
+
+### Listing buckets and objects
+
+By default, the `inquirer-s3` prompt will list the S3 content of a given AWS account in a file-system like fashion, starting by listing available buckets in a given region, and allowing the promnpted user to navigate its buckets and objects. To start a prompt, you can use with `inquirer` the key that you used to register the `inquirer-s3` module.
+
+```js
+inquirer.prompt([{
+  type: 's3-object',
+  name: 'object',
+  message: 'Which S3 object would you like to select?',
+  region: 'us-east-1'
+}]).then((answers) => {
+  console.log(JSON.stringify(answers, null, 2));
+}).catch((err) => {
+  console.log('Got error', err);
+});
+```
 
 ## Examples
+
+Runnable examples are available in the [examples](examples/) directory.
 
 ## See also
 

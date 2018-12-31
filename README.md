@@ -50,12 +50,17 @@ inquirer.prompt([{
   name: 'object',
   message: 'Which S3 object would you like to select?',
   region: 'us-east-1'
-}]).then((answers) => {
-  console.log(JSON.stringify(answers, null, 2));
-}).catch((err) => {
-  console.log('Got error', err);
-});
+}]).then(console.log);
 ```
+
+### Parameters
+
+A set of optional parameters can be passed to `inquirer-s3`. Below is a description of all the optional parameters along with their role.
+
+ - **bucket** - A bucket to pre-select. When specifying the `bucket` parameter with the name of a valid S3 account owned by your AWS account, the `inquirer-s3` module will start to browse at the root of this bucket.
+ - **prefix** - 
+
+## Handling errors
 
 ## Examples
 
@@ -64,4 +69,4 @@ Runnable examples are available in the [examples](examples/) directory.
 ## See also
 
  - The [inquirer](https://github.com/SBoudrias/Inquirer.js) interactive prompt framework.
- - The [s3-ls] object browser library.
+ - The [s3-ls](https://github.com/koresar/s3-ls) object browser library.

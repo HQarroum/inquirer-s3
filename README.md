@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <img width="220" src="assets/icon.png" />
+  <img width="220" src="docs/icon.png" />
 </p>
 <br />
 

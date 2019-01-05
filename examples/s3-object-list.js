@@ -12,7 +12,4 @@ inquirer.prompt([{
   type: 's3-object',
   name: 'result',
   message: 'Which S3 object would you like to select?'
-}]).then((answers) => {
-  console.log(answers);
-  process.exit()
-});
+}]).then(console.log);

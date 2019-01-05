@@ -70,9 +70,9 @@ class Prompt extends Base {
    */
   constructor(opts) {
     super(opts);
-    Base.apply( this, arguments );
-    if (this.opt.prefix && !this.opt.bucket) {
-      throw new Error('You cannot specify a `prefix` without a `bucket` parameter.');
+    Base.apply(this, arguments);
+    if (this.opt.objectPrefix && !this.opt.bucket) {
+      throw new Error('You cannot specify an `objectPrefix` without a `bucket` parameter.');
     }
     this.basePath = 'root';
     this.currentPath = this.basePath;
@@ -80,7 +80,7 @@ class Prompt extends Base {
     this.firstRender = true;
     this.bucket = opts.bucket;
     this.depth = this.bucket ? 1 : 0;
-    this.prefix = opts.prefix;
+    this.prefix = opts.objectPrefix;
     if (this.prefix) {
       this.depth = this.prefix.split('/').length;
     }
@@ -193,7 +193,7 @@ class Prompt extends Base {
       }
     }
     
-    // We are the `root`.
+    // We are at the `root` level.
     if (this.depth === 0) {
       this.bucket = null;
       this.prefix = null;

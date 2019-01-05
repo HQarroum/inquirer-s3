@@ -54,13 +54,22 @@ inquirer.prompt([{
 A set of optional parameters can be passed to `inquirer-s3`. Below is a description of all the optional parameters along with their role.
 
  - **bucket** - A bucket to pre-select. When specifying the `bucket` parameter with the name of a valid S3 account owned by your AWS account, the `inquirer-s3` module will start to browse at the root of this bucket.
- - **prefix** - An S3 object prefix indicating where you'd like to start the browsing inside a bucket.
+ - **objectPrefix** - An S3 object prefix indicating where you'd like to start the browsing inside a bucket.
  
- > Note that it is invalid to pass a `prefix` without passing a valid `bucket` and an error will be thrown in this case.
+ > Note that it is invalid to pass an `objectPrefix` without specifying a valid `bucket`, and an error will be thrown in this case.
 
 ## Handling errors
 
-When an error occurs, the promise returned by `inquirer` is still resolved but will contain an `err` property.
+When an error occurs, the promise returned by `inquirer` is still resolved, but will contain an `err` property as in the following sample output. This is due to the fact that there are no easy way to reject the promise in Inquirer from inside a plugin prompt.
+
+```js
+{ result: {
+  err: {
+    message: 'Missing credentials in config',
+    errno: 'ETIMEDOUT'
+  }
+}
+```
 
 ## Examples
 

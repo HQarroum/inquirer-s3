@@ -25,8 +25,6 @@ npm install --save inquirer-s3
 
 The `inquirer-s3` prompt allows you to use [inquirer](https://github.com/SBoudrias/Inquirer.js) to select an S3 object located on an AWS account. This prompt allows you to list buckets, objects within selected buckets and navigate across your buckets.
 
-It is also possible to pre-select a `bucket` or even an object using the `prefix` parameter.
-
 ## Usage
 
 ### Register the prompt
@@ -46,9 +44,8 @@ By default, the `inquirer-s3` prompt will list the S3 content of a given AWS acc
 ```js
 inquirer.prompt([{
   type: 's3-object',
-  name: 'object',
-  message: 'Which S3 object would you like to select?',
-  region: 'us-east-1'
+  name: 'result',
+  message: 'Which S3 object would you like to select?'
 }]).then(console.log);
 ```
 
@@ -59,9 +56,11 @@ A set of optional parameters can be passed to `inquirer-s3`. Below is a descript
  - **bucket** - A bucket to pre-select. When specifying the `bucket` parameter with the name of a valid S3 account owned by your AWS account, the `inquirer-s3` module will start to browse at the root of this bucket.
  - **prefix** - An S3 object prefix indicating where you'd like to start the browsing inside a bucket.
  
- > Note that it is invalid to pass a `prefix` without passing a valid `bucket`.
+ > Note that it is invalid to pass a `prefix` without passing a valid `bucket` and an error will be thrown in this case.
 
 ## Handling errors
+
+When an error occurs, the promise returned by `inquirer` is still resolved but will contain an `err` property.
 
 ## Examples
 

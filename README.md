@@ -1,13 +1,13 @@
-<br /><br />
-<p align="center">
-  <img width="700" src="docs/inquirer-screenshot.png" />
-</p>
-
 # inquirer-s3
 > An S3 object selector for inquirer.
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](contributing.md)
 [![CodeFactor](https://www.codefactor.io/repository/github/hqarroum/inquirer-s3/badge)](https://www.codefactor.io/repository/github/hqarroum/inquirer-s3)
+
+<br /><br />
+<p align="center">
+  <img width="700" src="docs/inquirer-screenshot.png" />
+</p>
 
 Current version: **1.0.0**
 

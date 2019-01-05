@@ -1,6 +1,6 @@
 <br /><br />
 <p align="center">
-  <img src="docs/recording.gif" />
+  <img width="200" src="docs/icon.png" />
 </p>
 <br />
 
@@ -9,6 +9,12 @@
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](contributing.md)
 [![CodeFactor](https://www.codefactor.io/repository/github/hqarroum/inquirer-s3/badge)](https://www.codefactor.io/repository/github/hqarroum/inquirer-s3)
+
+<br /><br />
+<p align="center">
+  <img width="700" src="docs/recording.gif" />
+</p>
+<br />
 
 Current version: **1.0.0**
 

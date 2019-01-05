@@ -1,6 +1,6 @@
 <br /><br />
 <p align="center">
-  <img width="700" src="docs/recording.gif" />
+  <img width="700" src="docs/inquirer-screenshot.png" />
 </p>
 
 # inquirer-s3

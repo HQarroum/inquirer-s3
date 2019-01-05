@@ -1,8 +1,7 @@
 <br /><br />
 <p align="center">
-  <img width="220" src="docs/icon.png" />
+  <img width="700" src="docs/recording.gif" />
 </p>
-<br />
 
 # inquirer-s3
 > An S3 object selector for inquirer.

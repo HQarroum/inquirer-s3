@@ -1,6 +1,6 @@
-<br />
+<br /><br />
 <p align="center">
-  <img width="220" src="assets/icon.png" />
+  <img width="220" src="docs/icon.png" />
 </p>
 <br />
 
@@ -19,7 +19,7 @@ Lead Maintainer: [Halim Qarroum](mailto:hqm.post@gmail.com)
 To add the `inquirer-s3` prompt to your application dependencies, run the following command :
 
 ```bash
-npm install --global inquirer-s3
+npm install --save inquirer-s3
 ```
 
 ## Description
@@ -58,7 +58,9 @@ inquirer.prompt([{
 A set of optional parameters can be passed to `inquirer-s3`. Below is a description of all the optional parameters along with their role.
 
  - **bucket** - A bucket to pre-select. When specifying the `bucket` parameter with the name of a valid S3 account owned by your AWS account, the `inquirer-s3` module will start to browse at the root of this bucket.
- - **prefix** - 
+ - **prefix** - An S3 object prefix indicating where you'd like to start the browsing inside a bucket.
+ 
+ > Note that it is invalid to pass a `prefix` without passing a valid `bucket`.
 
 ## Handling errors
 

@@ -1,7 +1,7 @@
 {
   "name": "inquirer-s3",
   "version": "1.0.0",
-  "description": "An S3 bucket and object selector for inquirer.",
+  "description": "An S3 bucket and object selector for Inquirer.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

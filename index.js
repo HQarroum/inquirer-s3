@@ -231,7 +231,7 @@ class Prompt extends Base {
         bucket: this.bucket,
         prefix: prefix,
         objectUrl: `https://s3.amazonaws.com/${this.bucket}/${prefix}`,
-        s3uri: `s3://${this.bucket}/${prefix}`
+        s3Uri: `s3://${this.bucket}/${prefix}`
       });
     }
     // Signaling the end of the query.

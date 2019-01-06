@@ -1,6 +1,6 @@
 {
   "name": "inquirer-s3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An S3 bucket and object selector for Inquirer.",
   "main": "index.js",
   "scripts": {

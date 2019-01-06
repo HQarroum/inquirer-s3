@@ -13,6 +13,15 @@ Current version: **1.0.0**
 
 Lead Maintainer: [Halim Qarroum](mailto:hqm.post@gmail.com)
 
+## Table of content
+
+ - [Installation](#install)
+ - [Description](#description)
+ - [Handling errors](#handling-errors)
+ - [Provisionning AWS credentials](#provisionning-aws-credentials)
+ - [Examples](#examples)
+ - [See also](#see-also)
+
 ## Install
 
 To add the `inquirer-s3` prompt to your application dependencies, run the following command :
@@ -70,6 +79,32 @@ When an error occurs, the promise returned by `inquirer` is still resolved, but 
   }
 }
 ```
+
+## Provisionning AWS credentials
+
+The `inquirer-s3` plugin needs to retrieve STS tokens from AWS in order to interact with the S3 service on your account. The easiest way to achieve this is to have the [AWS CLI](https://aws.amazon.com/fr/cli/) installed **and** configured on your development or deployment machine.
+
+> Read more on [Installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) and [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html).
+
+If you happen to have the AWS CLI installed and configured with valid credentials on your local machine, `inquirer-s3` will automatically use these credentials to authenticate against the AWS services it is making requests against.
+
+### Using AWS Profiles
+
+If you have configured the AWS CLI with different [profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html), it is possible to explicitly specify an AWS profile to use by specifying the `AWS_PROFILE` variable in your environment such as in the following example.
+
+```bash
+AWS_PROFILE=my-custom-profile node examples/s3-object-list.js
+```
+
+### Specifying custom AWS credentials
+
+If you do not have the AWS CLI installed or configured, or you would like to use `inquirer-s3` with custom credentials, you can pass your `AWS_ACCESS_KEY_ID` and your `AWS_SECRET_ACCESS_KEY` as environment variables of ur application such as in the following example :
+
+```bash
+$ AWS_ACCESS_KEY_ID=<access-key-id> AWS_SECRET_ACCESS_KEY=<secret-access-key> node examples/s3-object-list.js
+```
+
+> If you are using temporary credentials you can also specify an `AWS_SESSION_TOKEN` additionally to the aforementioned variables.
 
 ## Examples
 

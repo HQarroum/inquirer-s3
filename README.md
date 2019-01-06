@@ -9,7 +9,7 @@
   <img width="700" src="docs/inquirer-screenshot.png" />
 </p>
 
-Current version: **1.0.0**
+Current version: **1.0.1**
 
 Lead Maintainer: [Halim Qarroum](mailto:hqm.post@gmail.com)
 

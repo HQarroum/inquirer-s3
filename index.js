@@ -287,13 +287,13 @@ class Prompt extends Base {
 };
 
 /**
- * Function for rendering list choices
+ * Function for rendering list choices.
  * @param  {Number} pointer Position of the pointer
  * @return {String}         Rendered content
  */
- function listRender(choices, pointer) {
-  var output = '';
-  var separatorOffset = 0;
+const listRender = function (choices, pointer) {
+  let output = '';
+  let separatorOffset = 0;
 
   choices.forEach(function (choice, i) {
     if (choice.type === 'separator') {
@@ -302,8 +302,8 @@ class Prompt extends Base {
       return;
     }
 
-    var isSelected = (i - separatorOffset === pointer);
-    var line = (isSelected ? figures.pointer + ' ' : '  ') + choice.name;
+    const isSelected = (i - separatorOffset === pointer);
+    let line = (isSelected ? figures.pointer + ' ' : '  ') + choice.name;
     if (isSelected) {
       line = chalk.cyan(line);
     }
@@ -311,6 +311,6 @@ class Prompt extends Base {
   });
 
   return output.replace(/\n$/, '');
-}
+};
 
 module.exports = Prompt;

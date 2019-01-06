@@ -88,7 +88,7 @@ class Prompt extends Base {
     this.opt.default = null;
     this.searchTerm = '';
     this.paginator = new Paginator();
-  };
+  }
 
   /**
    * Starts the Inquiry session.
@@ -165,9 +165,10 @@ class Prompt extends Base {
   }
   
   /**
-   *  when user selects to drill into a folder (by selecting folder name)
+   * Called when the user selects to drill into a folder, 
+   * by selecting the folder name.
    */
-  handleTraversal(value) {
+  handleTraversal() {
     // The user selected identifier. 
     const input = this.opt.choices.choices[this.selected].value;
     // Adjusting the `depth` to the navigation state.
@@ -284,7 +285,7 @@ class Prompt extends Base {
       return (result);
     }));
   }
-};
+}
 
 /**
  * Function for rendering list choices.

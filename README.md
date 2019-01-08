@@ -6,7 +6,7 @@
 
 <br /><br />
 <p align="center">
-  <img width="700" src="docs/inquirer-screenshot.png" />
+  <img  src="docs/inquirer-screenshot.png" />
 </p>
 
 Current version: **1.0.1**

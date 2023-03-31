@@ -15,12 +15,20 @@ Lead Maintainer: [Halim Qarroum](mailto:hqm.post@gmail.com)
 
 ## Table of content
 
- - [Installation](#install)
- - [Description](#description)
- - [Handling errors](#handling-errors)
- - [Provisionning AWS credentials](#provisionning-aws-credentials)
- - [Examples](#examples)
- - [See also](#see-also)
+- [inquirer-s3](#inquirer-s3)
+  - [Table of content](#table-of-content)
+  - [Install](#install)
+  - [Description](#description)
+  - [Usage](#usage)
+    - [Register the prompt](#register-the-prompt)
+    - [Listing buckets and objects](#listing-buckets-and-objects)
+    - [Parameters](#parameters)
+  - [Handling errors](#handling-errors)
+  - [Provisionning AWS credentials](#provisionning-aws-credentials)
+    - [Using AWS Profiles](#using-aws-profiles)
+    - [Specifying custom AWS credentials](#specifying-custom-aws-credentials)
+  - [Examples](#examples)
+  - [See also](#see-also)
 
 ## Install
 
@@ -64,7 +72,10 @@ A set of optional parameters can be passed to `inquirer-s3`. Below is a descript
 
  - **bucket** - A bucket to pre-select. When specifying the `bucket` parameter with the name of a valid S3 account owned by your AWS account, the `inquirer-s3` module will start to browse at the root of this bucket.
  - **objectPrefix** - An S3 object prefix indicating where you'd like to start the browsing inside a bucket.
- 
+ - **enableFolderSelect** - a boolean specifying whether the user is allowed to select an S3 "folder" prefix as a valid result, default false
+ - **enableFileObjectSelect**  - a boolean specifying whether the user is allowed to select an S3 object ("files") as a valid result, default true
+ - **enableOtherBuckets** - a boolean specifying whether the user should be allowed to navigate to buckets other than the `bucket` parameter specified, default true
+
  > Note that it is invalid to pass an `objectPrefix` without specifying a valid `bucket`, and an error will be thrown in this case.
 
 ## Handling errors
